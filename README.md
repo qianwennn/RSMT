@@ -1,5 +1,18 @@
 # RSMT
+# rectilinear steiner minimum tree
+the algorithm used:
+A Sequential Steiner Tree Heuristic
+1.Find the closest (in terms of rectilinear distance) pin pair, 
+construct their minimum bounding box (MBB) 
+2.Find the closest point pair (pMBB,pC) between any point pMBB on 
+the MBB and pC from the set of pins to consider 
+3.Construct the MBB of pMBB and pC
+4.Add the L-shape that pMBB lies on to T (deleting the other L- shape). 
+If pMBB is a pin, then add any L-shape of the MBB to T. 
+5.Go to step 2 until the set of pins to consider is empty
 Testcases format: ICCAD 2015
+###########################
+• input:
 •  Net <net_id> <num_pins>
 •  0 <x_coordinate> <y_coordinate>
 •  …
